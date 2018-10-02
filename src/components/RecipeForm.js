@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from '../styles';
 
-const RecipeForm  = (props) => {
+export const RecipeForm  = (props) => {
 
 return(
 <form>
@@ -28,6 +28,6 @@ return(
 </form>
 )
 }
- export default RecipeForm;
+ 
 
  
