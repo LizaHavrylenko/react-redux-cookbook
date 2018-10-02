@@ -3,6 +3,7 @@ import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';  
 import {updateRecipe, deleteRecipe} from '../actions/RecipesActions';
+import RecipeForm from '..components/RecipeForm';
  
 
 class EditConnectedRecipe extends React.Component{
