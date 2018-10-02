@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {headerStyles, imageStyles, buttonStyles, paragraphStyles} from '../styles';
 
-const Recipe  = (props)=> {
+export const Recipe  = (props)=> {
     return(
         <div>
         <h2 style = {headerStyles}>{props.title}</h2>
@@ -14,4 +14,4 @@ const Recipe  = (props)=> {
         </div> 
     )
 }
-export default Recipe;
+ 

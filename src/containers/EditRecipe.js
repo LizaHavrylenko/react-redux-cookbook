@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';  
 import {updateRecipe, deleteRecipe} from '../actions/RecipesActions';
 import {RecipeForm} from '../components/RecipeForm';
-import RecipeNotFound from '../components/RecipeNotFound';
+import {RecipeNotFound} from '../components/RecipeNotFound';
  
 
 class EditConnectedRecipe extends React.Component{

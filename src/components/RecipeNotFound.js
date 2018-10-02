@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {headerStyles, buttonStyles} from '../styles';
 
-const RecipeNotFound = (props) => {
+export const RecipeNotFound = (props) => {
     return (
         <div>
            <h2 style = {headerStyles}>{props.header}</h2>
@@ -12,4 +12,4 @@ const RecipeNotFound = (props) => {
     )
 };
 
-export default RecipeNotFound;
+ 
