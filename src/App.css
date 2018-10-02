@@ -1,0 +1,11 @@
+ .App {
+  text-align: center;
+  color: red;
+}
+         
+ 
+input, textarea{
+  padding:5px;
+  margin:10px;
+  width:500px;
+}
