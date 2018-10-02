@@ -72,6 +72,7 @@ class AddConnectedRecipe extends React.Component{
             description = {description}
             ingredients =  {ingredients}
             header = "New Recipe"
+            button = "Add"
             />
         );
     }

@@ -80,6 +80,7 @@ class EditConnectedRecipe extends React.Component{
                 description = {description}
                 ingredients =  {ingredients}
                 header = "Edit Recipe"
+                button = "Save"
                 />
                 <Link to = "/recipes/deleted"> <button type = "button" className = "btn btn-danger" onClick = {this.deleteRecipe} style = {{width: '150px'}} >Delete this recipe</button></Link>
             </div>
