@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {RecipeNotFound} from '../components/RecipeNotFound';
-import {Recipe} from '..components/Recipe';
+import {Recipe} from '../components/Recipe';
  
         
 class ConnectedRecipe extends React.Component{
