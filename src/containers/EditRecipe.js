@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';  
 import {updateRecipe, deleteRecipe} from '../actions/RecipesActions';
 import {RecipeForm} from '../components/RecipeForm';
+import RecipeNotFound from '../components/RecipeNotFound';
  
 
 class EditConnectedRecipe extends React.Component{
@@ -63,11 +64,7 @@ class EditConnectedRecipe extends React.Component{
         const { title, ingredients, description, image} = this.state;
         if(this.state.title === 'There is no recipe under such name'){
             return(
-                <div>
-                <h2 style = {headerStyles}>{this.state.title}</h2>
-                <Link to = "/recipes"><button type = "button" className = "btn btn-warning" style = {buttonStyles}>See existing recipes</button></Link> 
-                <Link to = "/recipes/new"> <button className = "btn btn-default" style = {buttonStyles}>Add new recipe!</button></Link>
-                </div>
+                 <RecipeNotFound header = {this.state.title} />
         );
         }
         else{
