@@ -1,8 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {withRouter} from 'react-router';
+import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
+import {Link} from '../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
+import {withRouter} from '../../../../.cache/typescript/2.9/node_modules/@types/react-router';
 import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from './styles';
-import {connect} from 'react-redux'; 
+import {connect} from '../../../../.cache/typescript/2.9/node_modules/@types/react-redux'; 
 import {addRecipe} from './actions/RecipesActions';
 
 class AddConnectedRecipe extends React.Component{

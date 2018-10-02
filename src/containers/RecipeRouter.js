@@ -1,7 +1,7 @@
-import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
+import React from 'react';
 import ViewRecipe from '../ViewRecipe';
 import EditRecipe from '../EditRecipe';
-import {Route, Switch} from '../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
+import {Route, Switch} from 'react-router-dom';
  
 export const RecipeRouter = () => {
     return(

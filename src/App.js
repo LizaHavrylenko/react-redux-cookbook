@@ -3,7 +3,7 @@ import {containerStyles} from './styles';
 import {BrowserRouter as Router, Route, Switch, Redirect} from '../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
 import {MainPage} from './components/MainPage';
 import AddRecipe from './AddRecipe';
-import {RecipeRouter} from './RecipeRouter'; 
+import {RecipeRouter} from './containers/RecipeRouter'; 
 import {InfoAboutDelete} from './components/InfoAboutDelete';
  
 export const storage = window.localStorage;
