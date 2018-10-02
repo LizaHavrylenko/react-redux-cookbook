@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {containerStyles, headerStyles, buttonStyles} from './styles';
+import {headerStyles, buttonStyles} from './styles';
 
-export const InfoAboutUpdate = (props) => {
+export const InfoAboutUpdate = () => {
     return (
         <div className = "container">
            <h2 style = {headerStyles}>Recipe was updated</h2>
