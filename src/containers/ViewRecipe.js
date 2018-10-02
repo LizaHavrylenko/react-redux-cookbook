@@ -2,6 +2,7 @@ import React from 'react';
 import {headerStyles, imageStyles, buttonStyles, paragraphStyles} from '../styles';
 import { Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import RecipeNotFound from '../components/RecipeNotFound';
  
         
 class ConnectedRecipe extends React.Component{
@@ -30,11 +31,7 @@ class ConnectedRecipe extends React.Component{
         
         if(this.state.title === 'There is no recipe under such name'){
             return(
-                <div>
-                <h2 style = {headerStyles}>{this.state.title}</h2>
-                <Link to = "/recipes"><button type = "button" className = "btn btn-warning" style = {buttonStyles}>See existing recipes</button></Link> 
-                <Link to = "/recipes/new"> <button className = "btn btn-default" style = {buttonStyles}>Add new recipe!</button></Link>
-                </div>
+                <RecipeNotFound header = {this.state.title} />
         );
         }
         else{
