@@ -1,4 +1,4 @@
-import { createStore } from '../../../../.cache/typescript/2.9/node_modules/redux'
+import { createStore } from '../../../../.cache/typescript/2.9/node_modules/redux';
 import cookbookApp from './actions/RecipesReducers';
 import {loadState, saveState} from './localStorage';
 import throttle from '../../../../.cache/typescript/2.9/node_modules/@types/lodash/throttle';
