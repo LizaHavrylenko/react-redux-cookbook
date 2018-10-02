@@ -1,7 +1,7 @@
  import React, { Component } from '../../../.cache/typescript/2.9/node_modules/@types/react';
 import {containerStyles} from './styles';
 import {BrowserRouter as Router, Route, Switch, Redirect} from '../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
-import {MainPage} from './MainPage';
+import {MainPage} from './components/MainPage';
 import AddRecipe from './AddRecipe';
 import {RecipeRouter} from './RecipeRouter'; 
 import {InfoAboutDelete} from './components/InfoAboutDelete';

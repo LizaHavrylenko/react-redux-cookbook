@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
+import { Link } from '../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
 import {headerStyles, buttonStyles} from './styles';
 
 const RecipeNotFound = () => {

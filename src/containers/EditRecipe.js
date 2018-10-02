@@ -1,7 +1,7 @@
-import React from 'react';
+import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
 import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from './styles';
-import { Link } from 'react-router-dom';
-import {connect} from 'react-redux';  
+import { Link } from '../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
+import {connect} from '../../../../.cache/typescript/2.9/node_modules/@types/react-redux';  
 import {updateRecipe, deleteRecipe} from './actions/RecipesActions';
 
 
