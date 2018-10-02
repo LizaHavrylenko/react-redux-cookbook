@@ -27,7 +27,6 @@ class ConnectedRecipe extends React.Component{
    
 
     render(){
-        const { title, ingredients, description, image} = this.state;
         if(this.state.title === 'There is no recipe under such name'){
             return(
                 <RecipeNotFound header = {this.state.title} />
@@ -36,10 +35,10 @@ class ConnectedRecipe extends React.Component{
         else{
             return(
                 <Recipe 
-                image = {image}
-                title  = {title}
-                description = {description}
-                ingredients =  {ingredients}
+                image = {this.state.image}
+                title  = {this.state.title}
+                description = {this.state.description}
+                ingredients =  {this.state.ingredients}
                 id = {this.props.match.params.id}
                 />
             ); 
