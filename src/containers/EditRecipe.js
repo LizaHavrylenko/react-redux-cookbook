@@ -1,5 +1,4 @@
 import React from 'react';
-import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from '../styles';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';  
 import {updateRecipe, deleteRecipe} from '../actions/RecipesActions';

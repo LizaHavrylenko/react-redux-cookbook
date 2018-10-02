@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {headerStyles, buttonStyles} from './styles';
+import {headerStyles, buttonStyles} from '../styles';
 
-const RecipeNotFound = () => {
+const RecipeNotFound = (props) => {
     return (
         <div>
            <h2 style = {headerStyles}>{props.header}</h2>
