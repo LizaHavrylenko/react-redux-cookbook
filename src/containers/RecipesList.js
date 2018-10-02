@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {recipesContainerStyles, recipeTitleStyles} from './styles';
+import {recipesContainerStyles, recipeTitleStyles} from '../styles';
 import {connect} from 'react-redux';
 
 

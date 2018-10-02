@@ -1,6 +1,6 @@
-import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
+import React from 'react';
 import {IntroToCookbook} from './IntroToCookbook';
-import RecipesList from '../RecipesList';
+import RecipesList from '../containers/RecipesList';
  
  
  export const MainPage = () => {    

@@ -1,7 +1,7 @@
-import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
-import {headerStyles, imageStyles, buttonStyles, paragraphStyles} from './styles';
-import { Link} from '../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
-import {connect} from '../../../../.cache/typescript/2.9/node_modules/@types/react-redux';
+import React from 'react';
+import {headerStyles, imageStyles, buttonStyles, paragraphStyles} from '../styles';
+import { Link} from 'react-router-dom';
+import {connect} from 'react-redux';
  
         
 class ConnectedRecipe extends React.Component{

@@ -1,6 +1,6 @@
-import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
+import React from 'react';
 import App from './App';
-import { Provider } from '../../../../.cache/typescript/2.9/node_modules/@types/react-redux';
+import { Provider } from 'react-redux';
 
 const Root = ({store}) =>{
     return(
