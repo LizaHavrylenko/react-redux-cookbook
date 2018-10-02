@@ -1,8 +1,7 @@
 import React from 'react';
-import {headerStyles, imageStyles, buttonStyles, paragraphStyles} from '../styles';
-import { Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import RecipeNotFound from '../components/RecipeNotFound';
+import Recipe from '..components/Recipe';
  
         
 class ConnectedRecipe extends React.Component{
@@ -28,23 +27,21 @@ class ConnectedRecipe extends React.Component{
    
 
     render(){
-        
+        const { title, ingredients, description, image} = this.state;
         if(this.state.title === 'There is no recipe under such name'){
             return(
                 <RecipeNotFound header = {this.state.title} />
         );
         }
         else{
-            const id = this.props.match.params.id;
             return(
-                <div>
-                <h2 style = {headerStyles}>{this.state.title}</h2>
-                <img alt = "Recipe logo" style = {imageStyles} src = {this.state.image}/>
-                <p style = {paragraphStyles}>{this.state.ingredients}</p>
-                <p style = {paragraphStyles}>{this.state.description}</p>
-                <Link to  = {`/recipes/${id}/edit`}><button type = "button" className = "btn btn-default"  style = {buttonStyles}>Edit this recipe</button></Link>
-                <Link to  = "/recipes"><button type = "button" className = "btn btn-default"  style = {buttonStyles}>Back to recipes</button></Link>
-               </div>  
+                <Recipe 
+                image = {image}
+                title  = {title}
+                description = {description}
+                ingredients =  {ingredients}
+                id = {this.props.match.params.id}
+                />
             ); 
         }
     }
