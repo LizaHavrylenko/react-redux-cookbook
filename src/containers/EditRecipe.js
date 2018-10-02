@@ -3,7 +3,7 @@ import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';  
 import {updateRecipe, deleteRecipe} from '../actions/RecipesActions';
-
+ 
 
 class EditConnectedRecipe extends React.Component{
     constructor(props, recipe){
@@ -57,9 +57,7 @@ class EditConnectedRecipe extends React.Component{
     deleteRecipe(){
         const id = this.props.match.params.id;
         this.props.deleteRecipe(id);
-    }  
-   
-    
+    } 
     render(){
         if(this.state.title === 'There is no recipe under such name'){
             return(
