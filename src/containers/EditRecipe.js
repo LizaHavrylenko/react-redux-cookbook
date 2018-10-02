@@ -59,6 +59,7 @@ class EditConnectedRecipe extends React.Component{
         this.props.deleteRecipe(id);
     } 
     render(){
+        const { title, ingredients, description, image} = this.state;
         if(this.state.title === 'There is no recipe under such name'){
             return(
                 <div>
@@ -71,29 +72,20 @@ class EditConnectedRecipe extends React.Component{
         else{
         return(
             <div>
-            <form action = "#">
-            <h2 style = {headerStyles}>Edit Recipe</h2>
-            <div style = {imageDivStyles}>
-            <input type="file" onChange={this.handleChangeImage} value = {this.state.file} style = {imageInputStyles} />
-            <img src={this.state.image} style = {imageStyles} alt = "Recipe logo"/>
-            </div> 
-              <div className = "form-group" style = {formGroupStyles}>
-                <label htmlFor = "title" >Title:</label>
-                 <input type = "text" id = "title" style = {inputStyles} className = "form-control"  value = {this.state.title} onChange = {this.handleChangeTitle} />
-              </div>
-              <div className = "form-group" style = {formGroupStyles}>
-                <label htmlFor = "ingredients">Ingredients:</label>
-                <p  contenteditable = "true" type = "text" id = "ingredients" style = {inputStyles}  className = "form-control" onChange = {this.handleChangeIngredients}>{this.state.ingredients}</p>
-              </div>
-              <div className = "form-group" style = {formGroupStyles}>
-                <label htmlFor = "description">Description:</label>
-                < p contenteditable = "true" type = "text" id = "description" style =  {inputStyles}  className = "form-control" cols = "400" wrap = "hard" onChange = {this.handleChangeDescription}>{this.state.description}</p>
-              </div>
-              <Link to = {`/recipes/${this.props.match.params.id}`}><button type = "button" onClick = {this.updateRecipe}  className = "btn btn-default" style = {buttonStyles}>Save</button></Link>
-              <Link to = {`/recipes/${this.props.match.params.id}`}><button type = "button" className = "btn btn-default" style = {buttonStyles}>Cancel</button></Link><br/>
-              <Link to = "/recipes/deleted"> <button type = "button" className = "btn btn-danger" onClick = {this.deleteRecipe} style = {{width: '150px'}} >Delete this recipe</button></Link>
-            </form>
-        </div>
+                <RecipeForm 
+                handleChangeImage = {this.handleChangeImage}
+                handleChangeDescription = {this.handleChangeDescription}
+                handleChangeIngredients = {this.handleChangeIngredients}
+                handleChangeTitle = {this.handleChangeTitle}
+                handleSubmit = {this.handleSubmit}
+                image = {image}
+                title  = {title}
+                description = {description}
+                ingredients =  {ingredients}
+                header = "Edit Recipe"
+                />
+                <Link to = "/recipes/deleted"> <button type = "button" className = "btn btn-danger" onClick = {this.deleteRecipe} style = {{width: '150px'}} >Delete this recipe</button></Link>
+            </div>
         )
     }
     }
