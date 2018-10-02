@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
-import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from '../styles';
 import {connect} from 'react-redux'; 
 import {addRecipe} from '../actions/RecipesActions';
+import RecipeForm from './RecipeForm';
 
 class AddConnectedRecipe extends React.Component{
      constructor(){
@@ -61,29 +60,18 @@ class AddConnectedRecipe extends React.Component{
     render(){ 
         const { title, ingredients, description, image} = this.state;
         return(
-        <div>
-            <form action = "#">
-            <h2 style = {headerStyles}>New Recipe</h2>
-            <div style = {imageDivStyles}>
-            <input  id = "input"type="file"  onChange={this.handleChangeImage}   style = {imageInputStyles} />
-            <img id = "image"  src={image} style = {imageStyles} alt = "Recipe logo"/>
-            </div>  
-              <div className = "form-group" style = {formGroupStyles}>
-                <label htmlFor = "title" >Title:</label>
-                 <input type = "text" id = "title" style = {inputStyles} className = "form-control"  value = {title} onChange = {this.handleChangeTitle} />
-              </div>
-              <div className = "form-group" style = {formGroupStyles}>
-                <label htmlFor = "Ingredients">Ingredients:</label>
-                <p contenteditable = "true"  type = "text" id = "Ingredients" style = {inputStyles}  className = "form-control"  onChange = {this.handleChangeIngredients}>{ingredients}</p>
-              </div>
-              <div className = "form-group" style = {formGroupStyles}>
-                <label htmlFor = "description">Description:</label>
-                <p contenteditable = "true"  type = "text" id = "description" style = {inputStyles}  className = "form-control"  cols = "400" wrap = "hard" onChange = {this.handleChangeDescription}>{description}</p>
-              </div>
-              <Link to = {`/recipes/${this.state.title}`}><button type = "submit"  className = "btn btn-default" onClick = {this.handleSubmit}  style = {buttonStyles}>Add</button></Link> 
-              <Link to = "/recipes"><button type = "button" className = "btn btn-default" style = {buttonStyles}>Cancel</button></Link>
-            </form>
-        </div>
+            <RecipeForm 
+            handleChangeImage = {this.handleChangeImage}
+            handleChangeDescription = {this.handleChangeDescription}
+            handleChangeIngredients = {this.handleChangeIngredients}
+            handleChangeTitle = {this.handleChangeTitle}
+            handleSubmit = {this.handleSubmit}
+            image = {image}
+            title  = {title}
+            description = {description}
+            ingredients =  {ingredients}
+            header = "New Recipe"
+            />
         );
     }
 }
