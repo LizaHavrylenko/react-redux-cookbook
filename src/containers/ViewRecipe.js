@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {RecipeNotFound} from '../components/RecipeNotFound';
 import {Recipe} from '../components/Recipe';
+import PropTypes from 'prop-types';
  
         
 class ConnectedRecipe extends React.Component{
@@ -44,6 +45,12 @@ class ConnectedRecipe extends React.Component{
             ); 
         }
     }
+}
+
+
+EditRecipe.propTypes = {
+    id: PropTypes.string,
+    recipe: PropTypes.object, 
 }
 
 const mapStateToProps = (state, ownProps) => {
