@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {recipesContainerStyles, recipeTitleStyles} from '../styles';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+ 
 
 
 class ConnectedList extends React.Component{
@@ -13,6 +15,10 @@ class ConnectedList extends React.Component{
       </div>
   )
 }
+}
+
+ConnectedList.PropTypes = {
+  titles: PropTypes.array.isRequired,
 }
   
   const mapStateToProps = state => {
