@@ -3,11 +3,13 @@ import {withRouter} from 'react-router';
 import {connect} from 'react-redux'; 
 import {addRecipe} from '../actions/RecipesActions';
 import {RecipeForm} from '../components/RecipeForm';
+import PropTypes from 'prop-types';
+ 
 
 
 class AddConnectedRecipe extends React.Component{
-     constructor(){
-         super();
+     constructor(props){
+         super(props);
          this.state = {
              title: "",
              ingredients: "",
@@ -76,6 +78,10 @@ class AddConnectedRecipe extends React.Component{
             />
         );
     }
+}
+
+AddRecipe.propTypes = {
+    recipe: PropTypes.object.isRequired, 
 }
 
 const mapDispatchToProps = dispatch => {

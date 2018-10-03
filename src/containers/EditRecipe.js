@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {updateRecipe, deleteRecipe} from '../actions/RecipesActions';
 import {RecipeForm} from '../components/RecipeForm';
 import {RecipeNotFound} from '../components/RecipeNotFound';
+import PropTypes from 'prop-types';
  
 
 class EditConnectedRecipe extends React.Component{
@@ -89,6 +90,11 @@ class EditConnectedRecipe extends React.Component{
     }
 }
 
+EditRecipe.propTypes = {
+    id: PropTypes.string,
+    recipe: PropTypes.obj, 
+}
+
 const mapStateToProps = (state, ownProps) => {
      
     if(state.recipesByID.includes(ownProps.id)){
@@ -106,3 +112,5 @@ const mapDispatchToProps = dispatch => {
   };
 const EditRecipe =  connect(mapStateToProps, mapDispatchToProps)(EditConnectedRecipe);
 export default EditRecipe;
+
+
