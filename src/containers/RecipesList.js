@@ -17,7 +17,7 @@ class ConnectedList extends React.Component{
 }
 }
 
-ConnectedList.PropTypes = {
+ConnectedList.propTypes = {
   titles: PropTypes.array.isRequired,
 }
   

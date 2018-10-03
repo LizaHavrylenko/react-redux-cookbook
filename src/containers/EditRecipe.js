@@ -90,7 +90,7 @@ class EditConnectedRecipe extends React.Component{
     }
 }
 
-EditRecipe.propTypes = {
+EditConnectedRecipe.propTypes = {
     id: PropTypes.string,
     recipe: PropTypes.object, 
 }
