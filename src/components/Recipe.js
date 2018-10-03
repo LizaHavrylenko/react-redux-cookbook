@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {headerStyles, imageStyles, buttonStyles, paragraphStyles} from '../styles';
+import PropTypes from 'prop-types';
+
 
 export const Recipe = (props) => {
         return(
@@ -13,5 +15,13 @@ export const Recipe = (props) => {
         <Link to  = "/recipes"><button type = "button" className = "btn btn-default"  style = {buttonStyles}>Back to recipes</button></Link>
         </div> 
     )
+}
+
+Recipe.propTypes = {
+    title: PropTypes.string,
+    image: PropTypes.string,
+    ingredients: PropTypes.string,
+    description: PropTypes.string,
+    id: PropTypes.string,
 }
  
