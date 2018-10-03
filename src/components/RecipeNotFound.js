@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {headerStyles, buttonStyles} from '../styles';
+import PropTypes from 'prop-types';
+
 
 export const RecipeNotFound = (props) => {
     return (
@@ -11,5 +13,9 @@ export const RecipeNotFound = (props) => {
         </div>
     )
 };
+
+RecipeNotFound.propTypes = {
+    header: PropTypes.string,
+}
 
  
