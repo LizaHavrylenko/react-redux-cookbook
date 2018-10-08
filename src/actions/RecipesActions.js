@@ -5,9 +5,9 @@ export const addRecipe = recipe => ({
 	id:recipe.id,
 	payload:recipe 
 })
-export const updateRecipe = recipe => ({
+export const updateRecipe = (recipe) => ({
 	type: constants.UPDATE_RECIPE,
-	id:recipe.id,
+	id: recipe.id,
 	payload: recipe
 })
  

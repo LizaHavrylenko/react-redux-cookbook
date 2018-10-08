@@ -51,8 +51,9 @@ class EditConnectedRecipe extends React.Component{
     }
     }
     updateRecipe(){
+        console.log("Message about current state: " + this.state);
         const { title, ingredients, description, image } = this.state;   
-        const id = this.props.match.params.id;
+        const id = title;
         this.props.updateRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id });
         alert(`Recipe ${this.props.match.params.id} was updated`);
     }
@@ -75,7 +76,7 @@ class EditConnectedRecipe extends React.Component{
                 handleChangeDescription = {this.handleChangeDescription}
                 handleChangeIngredients = {this.handleChangeIngredients}
                 handleChangeTitle = {this.handleChangeTitle}
-                handleSubmit = {this.handleSubmit}
+                handleSubmit = {this.updateRecipe}
                 image = {image}
                 title  = {title}
                 description = {description}

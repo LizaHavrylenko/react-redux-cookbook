@@ -23,7 +23,7 @@ const cookbookApp = (state = initialState, action) =>{
                 } 
             case constants.UPDATE_RECIPE:
               return  {
-                  recipesByID: [...state.recipesByID],
+                  recipesByID: [ ...state.recipesByID],
                   recipesByHash: Object.assign({}, state.recipesByHash, {[action.id] : action.payload })
                 }
             case constants.DELETE_RECIPE:
