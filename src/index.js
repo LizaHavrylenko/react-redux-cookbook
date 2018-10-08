@@ -6,7 +6,7 @@ import configureStore from './store/configureStore';
 import Root from './Root';
 
 
-const store = configureStore();
+export const store = configureStore();
 
 ReactDOM.render(<Root store = {store} />,
      document.getElementById('root'));

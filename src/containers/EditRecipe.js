@@ -6,6 +6,7 @@ import {RecipeForm} from '../components/RecipeForm';
 import {RecipeNotFound} from '../components/RecipeNotFound';
 import PropTypes from 'prop-types';
  
+ 
 
 class EditConnectedRecipe extends React.Component{
     constructor(props, recipe){
@@ -52,8 +53,8 @@ class EditConnectedRecipe extends React.Component{
     }
     updateRecipe(){
         console.log("Message about current state: " + this.state);
-        const { title, ingredients, description, image } = this.state;   
-        const id = title;
+        const { title, ingredients, description, image } = this.state;  
+        const id = this.props.match.params.id;
         this.props.updateRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id });
         alert(`Recipe ${this.props.match.params.id} was updated`);
     }
@@ -81,6 +82,7 @@ class EditConnectedRecipe extends React.Component{
                 title  = {title}
                 description = {description}
                 ingredients =  {ingredients}
+                id = {this.props.match.params.id}
                 header = "Edit Recipe"
                 button = "Save"
                 />
@@ -97,7 +99,7 @@ EditConnectedRecipe.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-     
+    console.log(state); 
     if(state.recipesByID.includes(ownProps.id)){
         return { recipe: state.recipesByHash[ownProps.id] };
         }
