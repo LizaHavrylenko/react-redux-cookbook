@@ -4,8 +4,9 @@ import {connect} from 'react-redux';
 import {addRecipe} from '../actions/RecipesActions';
 import {RecipeForm} from '../components/RecipeForm';
 import PropTypes from 'prop-types';
- 
+import uuidv4 from 'uuid/v4';
 
+const recipeId = uuidv4();
 
 class AddConnectedRecipe extends React.Component{
      constructor(props){
@@ -14,7 +15,8 @@ class AddConnectedRecipe extends React.Component{
              title: "",
              ingredients: "",
              description: "",
-             image: ""    
+             image: "", 
+             id: recipeId    
          }
          this.handleChangeTitle = this.handleChangeTitle.bind(this);
          this.handleChangeDescription = this.handleChangeDescription.bind(this);
@@ -53,15 +55,14 @@ class AddConnectedRecipe extends React.Component{
     }
     
     handleSubmit(){
-       const { title, ingredients, description, image } = this.state;   
-       const id = title;
-       console.log({title:title, ingredients:ingredients, description:description, image:image, id:id });
-       this.props.addRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id });
+       const { title, ingredients, description, image, id } = this.state;   
+       console.log({title:title, ingredients:ingredients, description:description, image:image, id:id});
+       this.props.addRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id});
        
     }
 
     render(){ 
-        const { title, ingredients, description, image} = this.state;
+        const { title, ingredients, description, image, id} = this.state;
         return(
             <RecipeForm 
             handleChangeImage = {this.handleChangeImage}
@@ -71,6 +72,7 @@ class AddConnectedRecipe extends React.Component{
             handleSubmit = {this.handleSubmit}
             image = {image}
             title  = {title}
+            id = {id}
             description = {description}
             ingredients =  {ingredients}
             header = "New Recipe"

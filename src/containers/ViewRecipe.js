@@ -13,6 +13,7 @@ class ConnectedRecipe extends React.Component{
             ingredients:  '',
             description:  '',
             image:  '',  
+            id: '',
         }
     }
     
@@ -22,13 +23,14 @@ class ConnectedRecipe extends React.Component{
             ingredients: this.props.recipe.ingredients,
             description: this.props.recipe.description,
             image: this.props.recipe.image,
+            id:this.props.recipe.id,
         });  
     }
        
    
 
     render(){
-        if(this.state.title === 'There is no recipe under such name'){
+        if(this.state.title === 'Searched recipe is not found'){
             return(
                 <RecipeNotFound header = {this.state.title} />
         );
@@ -54,9 +56,7 @@ ConnectedRecipe.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-     
-    console.log(state);
-    if(state.recipesByID.includes(ownProps.id)){
+    if(Object.getOwnPropertyNames(state.recipesByHash).includes(ownProps.id)){
     return { recipe: state.recipesByHash[ownProps.id] };
     }
     return { recipe: {title:'There is no recipe under such name', image: null, ingredients:'', description: ''}};

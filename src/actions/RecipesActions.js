@@ -1,5 +1,6 @@
 import * as constants from './RecipesConstants';
 
+
 export const addRecipe = recipe => ({
 	type: constants.ADD_RECIPE,
 	id:recipe.id,
@@ -7,7 +8,7 @@ export const addRecipe = recipe => ({
 })
 export const updateRecipe = (recipe) => ({
 	type: constants.UPDATE_RECIPE,
-	id: recipe.id,
+	id:recipe.id,
 	payload: recipe
 })
  

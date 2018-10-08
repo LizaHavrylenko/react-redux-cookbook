@@ -16,6 +16,7 @@ class EditConnectedRecipe extends React.Component{
             ingredients:  this.props.recipe.ingredients, 
             description: this.props.recipe.description,
             image:this.props.recipe.image,
+            id: this.props.recipe.id,
     }
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeIngredients = this.handleChangeIngredients.bind(this);
@@ -52,18 +53,16 @@ class EditConnectedRecipe extends React.Component{
     }
     }
     updateRecipe(){
-        console.log("Message about current state: " + this.state);
-        const { title, ingredients, description, image } = this.state;  
-        const id = this.props.match.params.id;
+        const { title, ingredients, description, image, id} = this.state;  
         this.props.updateRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id });
-        alert(`Recipe ${this.props.match.params.id} was updated`);
+        alert(`Recipe ${this.state.title} was updated`);
     }
     deleteRecipe(){
-        const id = this.props.match.params.id;
+        const id = this.state.id;
         this.props.deleteRecipe(id);
     } 
     render(){
-        const { title, ingredients, description, image} = this.state;
+        const { title, ingredients, description, image, id} = this.state;
         if(this.state.title === 'There is no recipe under such name'){
             return(
                  <RecipeNotFound header = {this.state.title} />
@@ -82,7 +81,7 @@ class EditConnectedRecipe extends React.Component{
                 title  = {title}
                 description = {description}
                 ingredients =  {ingredients}
-                id = {this.props.match.params.id}
+                id = {id}
                 header = "Edit Recipe"
                 button = "Save"
                 />
@@ -99,14 +98,12 @@ EditConnectedRecipe.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state); 
-    if(state.recipesByID.includes(ownProps.id)){
+    if(Object.getOwnPropertyNames(state.recipesByHash).includes(ownProps.id)){
         return { recipe: state.recipesByHash[ownProps.id] };
-        }
-        return { recipe: {title:'There is no recipe under such name', image: null, ingredients:'', description: ''}};
-        
-     
-  }; 
+    }
+        return { recipe: {title:'Searched recipe is not found', image: null, ingredients:'', description: ''}};  
+}; 
+
 const mapDispatchToProps = dispatch => {
     return {
       updateRecipe: recipe => dispatch(updateRecipe(recipe)),

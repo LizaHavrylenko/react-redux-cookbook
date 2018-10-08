@@ -10,19 +10,19 @@ class ConnectedList extends React.Component{
   render(){
     return(
       <div className = "recipesContainer" style = {recipesContainerStyles}>
-        {this.props.titles.map(title =>
-        <Link to = {`/recipes/${title}`} key = {title} ><h2 style = {recipeTitleStyles}>{title}</h2></Link>)}
+        {this.props.recipes.map(recipe =>
+        <Link to = {`/recipes/${recipe.id}`} key = {recipe.id} ><h2 style = {recipeTitleStyles}>{recipe.title}</h2></Link>)}
       </div>
   )
 }
 }
 
 ConnectedList.propTypes = {
-  titles: PropTypes.array.isRequired,
+  recipes: PropTypes.array.isRequired,
 }
   
   const mapStateToProps = state => {
-    return { titles: state.recipesByID };
+    return { recipes: Object.values(state.recipesByHash)};
   };
   const RecipesList = connect(mapStateToProps)(ConnectedList);
 
