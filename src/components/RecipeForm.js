@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {imageStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from '../styles';
+import {imageStyles, largeInputStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from '../styles';
 
 export const RecipeForm  = (props) => {
 
@@ -18,11 +18,11 @@ export const RecipeForm  = (props) => {
               </div>
               <div className = "form-group" style = {formGroupStyles}>
               <label htmlFor = "ingredients">Ingredients:</label>
-              <div contentEditable  id = "ingredients" style = {inputStyles}  className = "form-control" onChange = {props.handleChangeIngredients}>{props.ingredients}</div>
+              <div contentEditable  id = "ingredients" style = {largeInputStyles}  className = "form-control" onChange = {props.handleChangeIngredients}>{props.ingredients}</div>
               </div>
               <div className = "form-group" style = {formGroupStyles}>
               <label htmlFor = "description">Description:</label>
-              <div contentEditable id = "description" style = {inputStyles}  className = "form-control"  cols = "400" wrap = "hard" onChange = {props.handleChangeDescription}>{props.description}</div>
+              <div contentEditable id = "description" style = {largeInputStyles}  className = "form-control"  cols = "400" wrap = "hard" onChange = {props.handleChangeDescription}>{props.description}</div>
               </div>
               <Link to = {`/recipes/${props.id}`}><button type = "submit"  className = "btn btn-default" onClick = {props.handleSubmit}  style = {buttonStyles}>{props.button}</button></Link> 
               <Link to = "/recipes"><button type = "button" className = "btn btn-default" style = {buttonStyles}>Cancel</button></Link>

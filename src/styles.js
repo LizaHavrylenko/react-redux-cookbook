@@ -25,6 +25,12 @@ export const inputStyles = {
      padding:10,
      height:'auto',
 }
+export const largeInputStyles = {
+    display: 'block',
+    width: 400,
+    padding:10,
+    minHeight: '100',
+}
  export const formGroupStyles = {
      textAlign: 'left',
      marginLeft: 20,
