@@ -1,8 +1,9 @@
 import * as constants from './RecipesConstants';
+import defaultRecipes from '../store/defaultRecipes';
  
 
 export const initialState = {
-    recipesByHash: {}    
+    recipesByHash: defaultRecipes    
     }
 
 const cookbookApp = (state = initialState, action) =>{
