@@ -21,20 +21,20 @@ export const headerStyles = {
 }
 export const inputStyles = {
      display: 'block',
-     maxWidth: 400,
+     maxWidth: 408.89,
      padding:10,
      height:'auto',
 }
 export const largeInputStyles = {
     display: 'block',
-    maxWidth: 400,
+    maxWidth: 408.89,
     padding:10,
     height: 'auto',
     minHeight: '80px',
 }
  export const formGroupStyles = {
      textAlign: 'left',
-     marginLeft: 20,
+     marginLeft: 30,
      marginRight: 20,
      marginBottom: 20,
      fontSize: '1em',
@@ -78,6 +78,6 @@ export const largeInputStyles = {
      textAlign: 'left',
      height: 'auto',
      whiteSpace: 'pre-wrap',
-     maxWidth: 400,
+     maxWidth: 408.89,
      margin: 30, 
     }
