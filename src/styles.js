@@ -21,13 +21,13 @@ export const headerStyles = {
 }
 export const inputStyles = {
      display: 'block',
-     width: 400,
+     maxWidth: 400,
      padding:10,
      height:'auto',
 }
 export const largeInputStyles = {
     display: 'block',
-    width: 400,
+    maxWidth: 400,
     padding:10,
     height: 'auto',
     minHeight: '80px',
