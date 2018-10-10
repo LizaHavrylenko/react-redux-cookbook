@@ -29,7 +29,8 @@ export const largeInputStyles = {
     display: 'block',
     width: 400,
     padding:10,
-    minHeight: '100',
+    height: 'auto',
+    minHeight: '80px',
 }
  export const formGroupStyles = {
      textAlign: 'left',
