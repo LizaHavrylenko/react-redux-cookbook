@@ -1,7 +1,8 @@
 export const containerStyles = {
-    margin: '0 auto',
+    margin: 'auto',
     maxWidth: '500px',
     marginTop: "30px",
+    marginBottom: '30px',
     height: 'auto',
     minHeight: 500,
     textAlign: 'center',
