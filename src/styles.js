@@ -78,6 +78,6 @@ export const largeInputStyles = {
      textAlign: 'left',
      height: 'auto',
      whiteSpace: 'pre-wrap',
-     width: 400,
+     maxWidth: 400,
      margin: 30, 
     }
