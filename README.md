@@ -16,7 +16,7 @@ $ npm install
 ```sh
 $ npm start
 ```
-Go to [http://localhost:3000/](http://localhost:3000/#/) and see the app running
+Go to [http://localhost:3000/](http://localhost:3000/#/) and see the app running  
 You can also see it live on [Heroku](https://react-redux-cookbook.herokuapp.com)
 
 ---
