@@ -22,7 +22,7 @@ export const headerStyles = {
 export const inputStyles = {
      display: 'block',
      width: 400,
-     padding:20,
+     padding:10,
      height:'auto',
 }
  export const formGroupStyles = {
