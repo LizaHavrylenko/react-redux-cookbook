@@ -66,9 +66,7 @@ class AddConnectedRecipe extends React.Component{
     
     handleSubmit(){
        const { title, ingredients, description, image, id } = this.state;   
-       console.log({title:title, ingredients:ingredients, description:description, image:image, id:id});
        this.props.addRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id});
-       
     }
 
     render(){ 
@@ -100,8 +98,7 @@ AddConnectedRecipe.propTypes = {
 const mapDispatchToProps = dispatch => {
     
     return {
-      addRecipe: recipe => {dispatch(addRecipe(recipe))
-    }
+      addRecipe: recipe => {dispatch(addRecipe(recipe))}
     };
   };
  const AddRecipe =  connect(null, mapDispatchToProps)(AddConnectedRecipe);
