@@ -26,10 +26,15 @@ when you first open the application there will alredy be three default recipes p
 ---
 ### Architecture
 ##### General description
-Application is written using React.js framework, Redux for global state management, and Bootstrap for layout. 
+Application is written using [React.js]((http://reactjs.net)) framework, [Redux](https://github.com/reduxjs/redux) for global state management, and [Bootstrap](https://github.com/twbs/bootstrap) for layout. 
 
 Technologies used:
+  - [create-react-app](https://github.com/facebook/create-react-app) for building
   - [react-router](https://github.com/rackt/react-router) library for routing
+  - [HTML5 File Reader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) for converting jpg images to DataURL
+  - [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) for persistent storage of data
+  
+  
   
 ##### Structure  
 
