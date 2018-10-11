@@ -40,7 +40,7 @@ Technologies used:
 ##### Structure  
 
 -actions  
-   -RecipesActions  
+   -RecipesActions 
    -RecipesConstants  
    -RecipesReducers  
 -components  
