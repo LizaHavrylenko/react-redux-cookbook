@@ -39,31 +39,31 @@ Technologies used:
   
 ##### Structure  
 
--actions  
-   -RecipesActions 
-   -RecipesConstants  
-   -RecipesReducers  
--components  
-   -InfoAboutDelete  
-   -IntroToCookbook  
-   -MainPage  
-   -Recipe  
-   -RecipeForm  
-   -RecipeNotFound  
--containers  
-   -AddRecipe  
-   -EditRecipe  
-   -ViewRecipe  
-   -RecipesList  
-   -Reciperouter  
--store  
-   -configureStore  
-   -localStorage  
-   -defaultRecipes  
- App  
- Root  
- index.js  
- styles.js  
+- actions  
+   - RecipesActions  
+   - RecipesConstants  
+   - RecipesReducers  
+- components  
+   - InfoAboutDelete  
+   - IntroToCookbook  
+   - MainPage  
+   - Recipe  
+   - RecipeForm  
+   - RecipeNotFound  
+- containers  
+   - AddRecipe  
+   - EditRecipe  
+   - ViewRecipe  
+   - RecipesList  
+   - Reciperouter  
+- store  
+   - configureStore  
+   - localStorage  
+   - defaultRecipes  
+- App  
+- Root  
+- index.js  
+- styles.js  
 
 
 
