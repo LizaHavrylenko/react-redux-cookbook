@@ -10,6 +10,7 @@ $ git clone https://github.com/LizaHavrylenko/react-redux-cookbook.git
 ```
 2 - Install dependencies via [npm](https://www.npmjs.com)
 ```sh
+$ cd react-redux-cookbook
 $ npm install
 ```
 3 - Run the app
