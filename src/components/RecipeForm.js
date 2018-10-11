@@ -19,11 +19,11 @@ export const RecipeForm  = (props) => {
               </div>
               <div className = "form-group" style = {formGroupStyles}>
               <label htmlFor = "ingredients">Ingredients:</label>
-              <textarea type = "text"  id = "ingredients" style = {largeInputStyles}  className = "form-control" onChange = {props.handleChangeIngredients} onInput = {props.handleChangeInput}>{props.ingredients}</textarea>
+              <textarea type = "text"  id = "ingredients" style = {largeInputStyles}  className = "form-control" onChange = {props.handleChangeIngredients} value = {props.ingredients} onInput = {props.handleChangeInput}></textarea>
               </div>
               <div className = "form-group" style = {formGroupStyles}>
               <label htmlFor = "description">Description:</label>
-              <textarea type = "text" id = "description" style = {largeInputStyles}  className = "form-control"  cols = "400" wrap = "hard" onChange = {props.handleChangeDescription} onInput = {props.handleChangeInput}>{props.description}</textarea>
+              <textarea type = "text" id = "description" style = {largeInputStyles}  className = "form-control"  cols = "400" wrap = "hard" onChange = {props.handleChangeDescription} value = {props.description} onInput = {props.handleChangeInput}></textarea>
               </div>
               <Link to = {`/recipes/${props.id}`}><button type = "submit"  className = "btn btn-default" onClick = {props.handleSubmit}  style = {buttonStyles}>{props.button}</button></Link> 
               <Link to = "/recipes"><button type = "button" className = "btn btn-default" style = {buttonStyles}>Cancel</button></Link>
