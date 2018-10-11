@@ -30,7 +30,7 @@ Application is written using [React.js]((http://reactjs.net)) framework, [Redux]
 
 Technologies used:
   - [create-react-app](https://github.com/facebook/create-react-app) for building
-  - [react-router](https://github.com/rackt/react-router) library for routing
+  - [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) library for routing
   - [HTML5 File Reader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) for converting jpg images to DataURL
   - [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) for persistent storage of data
   
