@@ -22,6 +22,7 @@ class EditConnectedRecipe extends React.Component{
         this.handleChangeIngredients = this.handleChangeIngredients.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
         this.handleChangeImage = this.handleChangeImage.bind(this);
+        this.handleChangeInput = this.handleChangeInput.bind(this);
         this.updateRecipe = this.updateRecipe.bind(this);
         this.deleteRecipe = this.deleteRecipe.bind(this);
     }
@@ -52,6 +53,14 @@ class EditConnectedRecipe extends React.Component{
     })     
     }
     }
+    handleChangeInput(event){
+        event.target.style.height = 'inherit';
+        const computed = window.getComputedStyle(event.target);
+        const height = parseInt(computed.getPropertyValue('border-top-width'), 10)
+                         + event.target.scrollHeight
+                         + parseInt(computed.getPropertyValue('border-bottom-width'), 10);
+        event.target.style.height = height + 'px';
+    }
     updateRecipe(){
         const { title, ingredients, description, image, id} = this.state;  
         this.props.updateRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id });
@@ -73,6 +82,7 @@ class EditConnectedRecipe extends React.Component{
             <div>
                 <RecipeForm 
                 handleChangeImage = {this.handleChangeImage}
+                handleChangeInput = {this.handleChangeInput}
                 handleChangeDescription = {this.handleChangeDescription}
                 handleChangeIngredients = {this.handleChangeIngredients}
                 handleChangeTitle = {this.handleChangeTitle}

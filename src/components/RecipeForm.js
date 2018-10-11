@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {imageStyles, largeInputStyles, imageDivStyles, imageInputStyles, headerStyles, inputStyles, formGroupStyles, buttonStyles} from '../styles';
 
+ 
 export const RecipeForm  = (props) => {
 
           return(
@@ -14,15 +15,15 @@ export const RecipeForm  = (props) => {
               </div>  
               <div className = "form-group" style = {formGroupStyles}>
               <label htmlFor = "title" >Title:</label>
-              <div contentEditable id = "title" style = {inputStyles} className = "form-control" onChange = {props.handleChangeTitle}>{props.title}</div>
+              <input type = "text" id = "title" style = {inputStyles} className = "form-control" value = {props.title} onChange = {props.handleChangeTitle} onInput = {props.handleChangeInput} />
               </div>
               <div className = "form-group" style = {formGroupStyles}>
               <label htmlFor = "ingredients">Ingredients:</label>
-              <div contentEditable  id = "ingredients" style = {largeInputStyles}  className = "form-control" onChange = {props.handleChangeIngredients}>{props.ingredients}</div>
+              <textarea type = "text"  id = "ingredients" style = {largeInputStyles}  className = "form-control" onChange = {props.handleChangeIngredients} onInput = {props.handleChangeInput}>{props.ingredients}</textarea>
               </div>
               <div className = "form-group" style = {formGroupStyles}>
               <label htmlFor = "description">Description:</label>
-              <div contentEditable id = "description" style = {largeInputStyles}  className = "form-control"  cols = "400" wrap = "hard" onChange = {props.handleChangeDescription}>{props.description}</div>
+              <textarea type = "text" id = "description" style = {largeInputStyles}  className = "form-control"  cols = "400" wrap = "hard" onChange = {props.handleChangeDescription} onInput = {props.handleChangeInput}>{props.description}</textarea>
               </div>
               <Link to = {`/recipes/${props.id}`}><button type = "submit"  className = "btn btn-default" onClick = {props.handleSubmit}  style = {buttonStyles}>{props.button}</button></Link> 
               <Link to = "/recipes"><button type = "button" className = "btn btn-default" style = {buttonStyles}>Cancel</button></Link>
