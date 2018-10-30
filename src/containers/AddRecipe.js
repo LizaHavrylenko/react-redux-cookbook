@@ -92,7 +92,7 @@ class AddConnectedRecipe extends React.Component{
 }
 
 AddConnectedRecipe.propTypes = {
-    recipe: PropTypes.object, 
+    recipe: PropTypes.object.isRequired, 
 }
 
 const mapDispatchToProps = dispatch => {

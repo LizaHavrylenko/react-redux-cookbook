@@ -15,7 +15,7 @@ export const RecipeNotFound = (props) => {
 };
 
 RecipeNotFound.propTypes = {
-    header: PropTypes.string,
+    header: PropTypes.string.isRequired,
 }
 
  

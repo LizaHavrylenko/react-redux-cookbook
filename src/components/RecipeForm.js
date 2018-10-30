@@ -32,17 +32,17 @@ export const RecipeForm  = (props) => {
 }
 
 RecipeForm.propTypes = {
-  header: PropTypes.string,
-  title: PropTypes.string,
-  image: PropTypes.string,
-  ingredients: PropTypes.string,
-  description: PropTypes.string,
-  id: PropTypes.string,
-  handleChangeImage: PropTypes.func,
-  handleChangeDescription: PropTypes.func,
-  handleChangeIngredients: PropTypes.func,
-  handleChangeTitle: PropTypes.func,
-  handleSubmit: PropTypes.func,
+  header: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  handleChangeImage: PropTypes.func.isRequired,
+  handleChangeDescription: PropTypes.func.isRequired,
+  handleChangeIngredients: PropTypes.func.isRequired,
+  handleChangeTitle: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 }
  
 

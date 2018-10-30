@@ -18,10 +18,10 @@ export const Recipe = (props) => {
 }
 
 Recipe.propTypes = {
-    title: PropTypes.string,
-    image: PropTypes.string,
-    ingredients: PropTypes.string,
-    description: PropTypes.string,
-    id: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    ingredients: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
 }
  
