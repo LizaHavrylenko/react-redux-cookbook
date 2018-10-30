@@ -62,8 +62,7 @@ class EditConnectedRecipe extends React.Component{
         event.target.style.height = height + 'px';
     }
     updateRecipe(){
-        const { title, ingredients, description, image, id} = this.state;  
-        this.props.updateRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id });
+        this.props.updateRecipe(this.state);
         alert(`Recipe ${this.state.title} was updated`);
     }
     deleteRecipe(){

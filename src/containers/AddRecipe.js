@@ -65,8 +65,7 @@ class AddConnectedRecipe extends React.Component{
     }
     
     handleSubmit(){
-       const { title, ingredients, description, image, id } = this.state;   
-       this.props.addRecipe({title:title, ingredients:ingredients, description:description, image:image, id:id});
+       this.props.addRecipe(this.state);
     }
 
     render(){ 
