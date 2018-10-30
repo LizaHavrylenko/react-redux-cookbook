@@ -7,7 +7,6 @@ import {RecipeNotFound} from '../components/RecipeNotFound';
 import PropTypes from 'prop-types';
  
  
-
 class EditConnectedRecipe extends React.Component{
     constructor(props, recipe){
         super(props, recipe);
@@ -17,7 +16,7 @@ class EditConnectedRecipe extends React.Component{
             description: this.props.recipe.description,
             image:this.props.recipe.image,
             id: this.props.recipe.id,
-    }
+        };
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeIngredients = this.handleChangeIngredients.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
@@ -38,20 +37,20 @@ class EditConnectedRecipe extends React.Component{
         });
     }
     handleChangeDescription(event){
-       this.setState({
-           description: event.target.value
-       });
-   }
+        this.setState({
+            description: event.target.value
+        });
+    }
     handleChangeImage(event) {
         let file = event.target.files[0];
         let reader = new FileReader(); 
         reader.readAsDataURL(file);   
         reader.onload = () => { 
-        let result = reader.result;
-        this.setState({
-        image: result,
-    })     
-    }
+            let result = reader.result;
+            this.setState({
+                image: result,
+            });    
+        };
     }
     handleChangeInput(event){
         event.target.style.height = 'inherit';
@@ -73,53 +72,55 @@ class EditConnectedRecipe extends React.Component{
         const { title, ingredients, description, image, id} = this.state;
         if(this.state.title === 'There is no recipe under such name'){
             return(
-                 <RecipeNotFound header = {this.state.title} />
-        );
+                <RecipeNotFound header = {this.state.title} />
+            );
         }
         else{
-        return(
-            <div>
-                <RecipeForm 
-                handleChangeImage = {this.handleChangeImage}
-                handleChangeInput = {this.handleChangeInput}
-                handleChangeDescription = {this.handleChangeDescription}
-                handleChangeIngredients = {this.handleChangeIngredients}
-                handleChangeTitle = {this.handleChangeTitle}
-                handleSubmit = {this.updateRecipe}
-                image = {image}
-                title  = {title}
-                description = {description}
-                ingredients =  {ingredients}
-                id = {id}
-                header = "Edit Recipe"
-                button = "Save"
-                />
-                <Link to = "/recipes/deleted"> <button type = "button" className = "btn btn-danger" onClick = {this.deleteRecipe} style = {{width: '150px'}} >Delete this recipe</button></Link>
-            </div>
-        )
-    }
+            return(
+                <div>
+                    <RecipeForm 
+                        handleChangeImage = {this.handleChangeImage}
+                        handleChangeInput = {this.handleChangeInput}
+                        handleChangeDescription = {this.handleChangeDescription}
+                        handleChangeIngredients = {this.handleChangeIngredients}
+                        handleChangeTitle = {this.handleChangeTitle}
+                        handleSubmit = {this.updateRecipe}
+                        image = {image}
+                        title  = {title}
+                        description = {description}
+                        ingredients =  {ingredients}
+                        id = {id}
+                        header = "Edit Recipe"
+                        button = "Save"
+                    />
+                    <Link to = "/recipes/deleted"> <button type = "button" className = "btn btn-danger" onClick = {this.deleteRecipe} style = {{width: '150px'}} >Delete this recipe</button></Link>
+                </div>
+            );
+        }
     }
 }
 
 EditConnectedRecipe.propTypes = {
     id: PropTypes.string.isRequired,
     recipe: PropTypes.object.isRequired, 
-}
+};
 
 const mapStateToProps = (state, ownProps) => {
     if(Object.getOwnPropertyNames(state.recipesByHash).includes(ownProps.id)){
         return { recipe: state.recipesByHash[ownProps.id] };
     }
-        return { recipe: {title:'Searched recipe is not found', image: null, ingredients:'', description: ''}};  
+    return { recipe: {title:'Searched recipe is not found', image: null, ingredients:'', description: ''}};  
 }; 
 
 const mapDispatchToProps = dispatch => {
     return {
-      updateRecipe: recipe => dispatch(updateRecipe(recipe)),
-      deleteRecipe: id => dispatch(deleteRecipe(id)) 
+        updateRecipe: recipe => dispatch(updateRecipe(recipe)),
+        deleteRecipe: id => dispatch(deleteRecipe(id)) 
     };
-  };
+};
+
 const EditRecipe =  connect(mapStateToProps, mapDispatchToProps)(EditConnectedRecipe);
+
 export default EditRecipe;
 
 

@@ -5,33 +5,33 @@ import {addRecipe} from '../actions/RecipesActions';
 import {RecipeForm} from '../components/RecipeForm';
 import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
+ 
 
 const recipeId = uuidv4();
 
 class AddConnectedRecipe extends React.Component{
-     constructor(props){
-         super(props);
-         this.state = {
-             title: "",
-             ingredients: "",
-             description: "",
-             image: "", 
-             id: recipeId    
-         }
-         this.handleChangeTitle = this.handleChangeTitle.bind(this);
-         this.handleChangeDescription = this.handleChangeDescription.bind(this);
-         this.handleChangeIngredients = this.handleChangeIngredients.bind(this);
-         this.handleChangeImage = this.handleChangeImage.bind(this);   
-         this.handleChangeInput = this.handleChangeInput.bind(this);
-         this.handleSubmit = this.handleSubmit.bind(this);   
-     }
+    constructor(props){
+        super(props);
+        this.state = {
+            title: '',
+            ingredients: '',
+            description: '',
+            image: '', 
+            id: recipeId    
+        };
+        this.handleChangeTitle = this.handleChangeTitle.bind(this);
+        this.handleChangeDescription = this.handleChangeDescription.bind(this);
+        this.handleChangeIngredients = this.handleChangeIngredients.bind(this);
+        this.handleChangeImage = this.handleChangeImage.bind(this);   
+        this.handleChangeInput = this.handleChangeInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);   
+    }
      
-
     handleChangeTitle(event){
-         this.setState({
-             title: event.target.value 
-         });
-     }
+        this.setState({
+            title: event.target.value 
+        });
+    }
     handleChangeDescription(event){
         this.setState({
             description: event.target.value
@@ -43,18 +43,16 @@ class AddConnectedRecipe extends React.Component{
         });
     }
     handleChangeImage(event) {
-
         let file = event.target.files[0];
         let reader = new FileReader(); 
         reader.readAsDataURL(file);   
         reader.onload = () => { 
-        let result = reader.result;
-        this.setState({
-          image: result,
-        })     
-        }
+            let result = reader.result;
+            this.setState({
+                image: result,
+            }) ;    
+        };
     }
-
     handleChangeInput(event){
         event.target.style.height = 'inherit';
         const computed = window.getComputedStyle(event.target);
@@ -63,28 +61,26 @@ class AddConnectedRecipe extends React.Component{
                          + parseInt(computed.getPropertyValue('border-bottom-width'), 10);
         event.target.style.height = height + 'px';
     }
-    
     handleSubmit(){
-       this.props.addRecipe(this.state);
+        this.props.addRecipe(this.state);
     }
-
     render(){ 
         const { title, ingredients, description, image, id} = this.state;
         return(
             <RecipeForm 
-            handleChangeImage = {this.handleChangeImage}
-            handleChangeInput = {this.handleChangeInput}
-            handleChangeDescription = {this.handleChangeDescription}
-            handleChangeIngredients = {this.handleChangeIngredients}
-            handleChangeTitle = {this.handleChangeTitle}
-            handleSubmit = {this.handleSubmit}
-            image = {image}
-            title  = {title}
-            id = {id}
-            description = {description}
-            ingredients =  {ingredients}
-            header = "New Recipe"
-            button = "Add"
+                handleChangeImage = {this.handleChangeImage}
+                handleChangeInput = {this.handleChangeInput}
+                handleChangeDescription = {this.handleChangeDescription}
+                handleChangeIngredients = {this.handleChangeIngredients}
+                handleChangeTitle = {this.handleChangeTitle}
+                handleSubmit = {this.handleSubmit}
+                image = {image}
+                title  = {title}
+                id = {id}
+                description = {description}
+                ingredients =  {ingredients}
+                header = "New Recipe"
+                button = "Add"
             />
         );
     }
@@ -92,14 +88,15 @@ class AddConnectedRecipe extends React.Component{
 
 AddConnectedRecipe.propTypes = {
     recipe: PropTypes.object.isRequired, 
-}
+};
 
 const mapDispatchToProps = dispatch => {
     
     return {
-      addRecipe: recipe => {dispatch(addRecipe(recipe))}
+        addRecipe: recipe => dispatch(addRecipe(recipe))
     };
-  };
- const AddRecipe =  connect(null, mapDispatchToProps)(AddConnectedRecipe);
+};
+
+const AddRecipe =  connect(null, mapDispatchToProps)(AddConnectedRecipe);
 
 export default withRouter(AddRecipe);

@@ -9,5 +9,5 @@ import Root from './Root';
 export const store = configureStore();
 
 ReactDOM.render(<Root store = {store} />,
-     document.getElementById('root'));
-     registerServiceWorker();
+    document.getElementById('root'));
+registerServiceWorker();

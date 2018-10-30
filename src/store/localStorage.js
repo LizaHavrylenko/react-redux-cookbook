@@ -1,5 +1,6 @@
 import { storage } from "../App";
 
+
 export const loadState = () =>{
     try{
         const serializedState = storage.getItem('state');
@@ -12,7 +13,7 @@ export const loadState = () =>{
     catch(err){
         return undefined; 
     }
-}
+};
 
 export const saveState = (state) =>{
     try{
@@ -22,7 +23,7 @@ export const saveState = (state) =>{
         storage.setItem('state', serializedState); 
     }
     catch(err){
-         
+        return err;  
     }
-}
+};
 
