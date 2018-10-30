@@ -9,26 +9,13 @@ class ConnectedRecipe extends React.Component{
     constructor(props,recipe){
         super(props, recipe);
         this.state = {
-            title:  '',
-            ingredients:  '',
-            description:  '',
-            image:  '',  
-            id: '',
-        }
-    }
-    
-    componentDidMount(){
-        this.setState({
             title: this.props.recipe.title,
             ingredients: this.props.recipe.ingredients,
             description: this.props.recipe.description,
-            image: this.props.recipe.image,
-            id:this.props.recipe.id,
-        });  
+            image: this.props.recipe.image,  
+            id: this.props.recipe.id,
+        }
     }
-       
-   
-
     render(){
         if(this.state.title === 'Searched recipe is not found'){
             return(
