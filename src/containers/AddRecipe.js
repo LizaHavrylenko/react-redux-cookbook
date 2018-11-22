@@ -91,7 +91,7 @@ AddConnectedRecipe.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => {
-    
+     
     return {
         addRecipe: recipe => dispatch(addRecipe(recipe))
     };
