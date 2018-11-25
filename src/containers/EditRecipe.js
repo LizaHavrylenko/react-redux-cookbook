@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';  
 import {updateRecipe, deleteRecipe} from '../actions/RecipesActions';
-import {RecipeForm} from '../components/RecipeForm';
+import RecipeForm from '../components/RecipeForm';
 import {RecipeNotFound} from '../components/RecipeNotFound';
 import PropTypes from 'prop-types';
  
@@ -84,7 +84,7 @@ class EditConnectedRecipe extends React.Component{
                         handleChangeDescription = {this.handleChangeDescription}
                         handleChangeIngredients = {this.handleChangeIngredients}
                         handleChangeTitle = {this.handleChangeTitle}
-                        handleSubmit = {this.updateRecipe}
+                        handleFormSubmit = {this.updateRecipe}
                         image = {image}
                         title  = {title}
                         description = {description}

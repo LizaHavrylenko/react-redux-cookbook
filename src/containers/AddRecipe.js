@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import {connect} from 'react-redux'; 
 import {addRecipe} from '../actions/RecipesActions';
-import {RecipeForm} from '../components/RecipeForm';
+import RecipeForm from '../components/RecipeForm';
 import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
  
@@ -17,7 +17,7 @@ class AddConnectedRecipe extends React.Component{
             ingredients: '',
             description: '',
             image: '', 
-            id: recipeId    
+            id: recipeId 
         };
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
@@ -61,8 +61,15 @@ class AddConnectedRecipe extends React.Component{
                          + parseInt(computed.getPropertyValue('border-bottom-width'), 10);
         event.target.style.height = height + 'px';
     }
+    
     handleSubmit(){
         this.props.addRecipe(this.state);
+        this.setState({
+           title: '',
+           ingredients: '',
+           description: '',
+           image: ''
+        });
     }
     render(){ 
         const { title, ingredients, description, image, id} = this.state;
@@ -73,7 +80,7 @@ class AddConnectedRecipe extends React.Component{
                 handleChangeDescription = {this.handleChangeDescription}
                 handleChangeIngredients = {this.handleChangeIngredients}
                 handleChangeTitle = {this.handleChangeTitle}
-                handleSubmit = {this.handleSubmit}
+                handleFormSubmit = {this.handleSubmit}
                 image = {image}
                 title  = {title}
                 id = {id}
