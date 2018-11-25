@@ -54,8 +54,8 @@ class RecipeForm  extends React.Component{
             return false;
         }
         else{
-            this.setState({redirect: true }, () => {
-                console.log(this.state.redirect);
+            this.setState({
+                redirect: true
             });
 
             inputs.forEach(input => {
@@ -75,7 +75,7 @@ class RecipeForm  extends React.Component{
           this.props.handleFormSubmit();
         }
     }
-    
+
     render(){
     return(
         <form onSubmit = {this.handleSubmit} ref = {this.formRef} noValidate>
@@ -118,7 +118,7 @@ RecipeForm.propTypes = {
     handleChangeDescription: PropTypes.func.isRequired,
     handleChangeIngredients: PropTypes.func.isRequired,
     handleChangeTitle: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
+    handleFormSubmit: PropTypes.func.isRequired,
 };
  
 export default RecipeForm;

@@ -3,7 +3,6 @@ import {withRouter} from 'react-router';
 import {connect} from 'react-redux'; 
 import {addRecipe} from '../actions/RecipesActions';
 import RecipeForm from '../components/RecipeForm';
-import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
  
 
@@ -93,9 +92,6 @@ class AddConnectedRecipe extends React.Component{
     }
 }
 
-AddConnectedRecipe.propTypes = {
-    recipe: PropTypes.object.isRequired, 
-};
 
 const mapDispatchToProps = dispatch => {
      

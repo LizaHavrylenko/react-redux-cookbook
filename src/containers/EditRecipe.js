@@ -102,7 +102,6 @@ class EditConnectedRecipe extends React.Component{
 
 EditConnectedRecipe.propTypes = {
     id: PropTypes.string.isRequired,
-    recipe: PropTypes.object.isRequired, 
 };
 
 const mapStateToProps = (state, ownProps) => {
